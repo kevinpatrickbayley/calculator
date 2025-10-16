@@ -1,0 +1,16 @@
+#calculator-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(190, 190, 98);
+    min-height: 55vh;
+    max-height: 100vh;
+    min-width: 50vh;
+    max-width: 100vh;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
