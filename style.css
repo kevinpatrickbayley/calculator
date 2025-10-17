@@ -59,3 +59,26 @@ body{
     width: 75%;
     display: flex; align-items: center; justify-content: flex-end;
 }
+
+#keypad-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.key{
+    background:
+    linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,0)) ,
+    linear-gradient(180deg, #d9b84b, #a67c00);
+  color: var(--ink);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-weight: 700;
+  text-align: center;
+  user-select: none;
+  box-shadow:
+    0 2px 0 rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.35);
+  transition: transform .05s ease, box-shadow .05s ease, filter .15s ease;
+}
