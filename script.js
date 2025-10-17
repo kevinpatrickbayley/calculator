@@ -20,8 +20,12 @@ const displayText = document.getElementById("display-text");
 const keypadGrid = document.getElementById("keypad-grid");
 
 keypadGrid.addEventListener("click", function(event){
-    if (event.target && event.target.classList.contains("key")){
+    if (event.target && event.target.classList.contains("key-print")){
         tempDisplayTest += event.target.textContent;
+        displayText.textContent = tempDisplayTest;
+    }
+    if (event.target && event.target.classList.contains("key-clear")){
+        tempDisplayTest = "";
         displayText.textContent = tempDisplayTest;
     }
 })
