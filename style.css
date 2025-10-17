@@ -64,6 +64,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    width: 75%;
 }
 
 .key{
@@ -92,9 +93,13 @@ body{
   filter: brightness(.96);
 }
 
-.key--op{
+.key-op{
   background:
     linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0)) ,
     linear-gradient(180deg, #b38600, #7a5a00);
   color: #fff;
+}
+
+.key-wide{
+    grid-column: 2 / 4;
 }
