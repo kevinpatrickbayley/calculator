@@ -20,14 +20,17 @@ const displayText = document.getElementById("display-text");
 const keypadGrid = document.getElementById("keypad-grid");
 
 keypadGrid.addEventListener("click", function(event){
-    if (event.target && event.target.classList.contains("key-print")){
+    //numbers and operators
+    if (event.target && event.target.classList.contains("key-print") && tempDisplayTest.length < 14){
         tempDisplayTest += event.target.textContent;
         displayText.textContent = tempDisplayTest;
     }
+    //clear key
     if (event.target && event.target.classList.contains("key-clear")){
         tempDisplayTest = "";
         displayText.textContent = tempDisplayTest;
     }
+    //backspace key
     if (event.target && event.target.classList.contains("key-back")){
         tempDisplayTest = tempDisplayTest.slice(0,-1);
         displayText.textContent = tempDisplayTest;
