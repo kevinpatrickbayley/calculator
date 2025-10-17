@@ -14,7 +14,14 @@ let operate = function(op, n1, n2){
     if (op === "/") divide(n1, n2);
 }
 
-let tempdDisplayTest = "";
+let tempDisplayTest = "";
 const displayText = document.getElementById("display-text");
 
+const keypadGrid = document.getElementById("keypad-grid");
 
+keypadGrid.addEventListener("click", function(event){
+    if (event.target && event.target.classList.contains("key")){
+        tempDisplayTest += event.target.textContent;
+        displayText.textContent = tempDisplayTest;
+    }
+})
