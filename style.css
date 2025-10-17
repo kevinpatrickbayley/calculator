@@ -6,8 +6,18 @@
   --ink:     #1a1a1a;   
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e0e0e;
+}
+
 #calculator-body{
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 16px;
     justify-content: center;
     align-items: center;
     width: min(90vw, 420px);
@@ -33,9 +43,19 @@
     ); 
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #0e0e0e;
+#LCD{
+    background:
+    linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,0)) ,
+    linear-gradient(180deg, #313131, #1e1e1e);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #cfe0c6;              
+    font-family: LCD;
+    font-weight: 600;
+    font-size: 48px;
+    letter-spacing: 2px;
+    text-align: right;
+    min-height: 56px;
+    width: 75%;
+    display: flex; align-items: center; justify-content: flex-end;
 }
