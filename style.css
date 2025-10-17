@@ -90,3 +90,10 @@ body{
     inset 0 2px 0 rgba(0,0,0,.25);
   filter: brightness(.96);
 }
+
+.key--op{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0)) ,
+    linear-gradient(180deg, #b38600, #7a5a00);
+  color: #fff;
+}
