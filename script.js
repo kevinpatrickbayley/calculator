@@ -28,4 +28,8 @@ keypadGrid.addEventListener("click", function(event){
         tempDisplayTest = "";
         displayText.textContent = tempDisplayTest;
     }
+    if (event.target && event.target.classList.contains("key-back")){
+        tempDisplayTest = tempDisplayTest.slice(0,-1);
+        displayText.textContent = tempDisplayTest;
+    }
 })
