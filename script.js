@@ -1,11 +1,18 @@
 let add = function(x, y){return x+y;}
+
 let subtract = function(x, y){return x-y;}
+
 const multiply = s => {
-  const rx = /(-?\d+(?:\.\d+)?)\*(-?\d+(?:\.\d+)?)/;
-  while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) * parseFloat(b)));
-  return s;
+    const rx = /(-?\d+(?:\.\d+)?)\*(-?\d+(?:\.\d+)?)/;
+    while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) * parseFloat(b)));
+    return s;
 };
-let divide = function(x, y){return x / y;}
+
+let divide = s => {
+    const rx = /(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)/;
+    while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) / parseFloat(b)));
+    return s;
+};
 
 let num1 = 0;
 let num2 = 0;
@@ -41,6 +48,6 @@ keypadGrid.addEventListener("click", function(event){
     }
     //equal key
     if (event.target && event.target.classList.contains("key-equal")){
-        tempDisplayTest = multiply(tempDisplayTest);
+        tempDisplayTest = divide(multiply(tempDisplayTest));
         displayText.textContent = tempDisplayTest;
     }})
