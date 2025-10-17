@@ -13,6 +13,10 @@ body{
     background: #0e0e0e;
 }
 
+p{
+    margin: 0;
+}
+
 #calculator-body{
     display: flex;
     flex-direction: column;

@@ -13,3 +13,8 @@ let operate = function(op, n1, n2){
     if (op === "*") multiply(n1, n2);
     if (op === "/") divide(n1, n2);
 }
+
+let tempdDisplayTest = "";
+const displayText = document.getElementById("display-text");
+
+
