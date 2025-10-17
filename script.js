@@ -4,7 +4,11 @@ let add = s => {
     return s;
 };
 
-let subtract = function(x, y){return x-y;}
+let subtract = s => {
+    const rx = /(-?\d+(?:\.\d+)?)\-(-?\d+(?:\.\d+)?)/;
+    while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) - parseFloat(b)));
+    return s;
+};
 
 const multiply = s => {
     const rx = /(-?\d+(?:\.\d+)?)\*(-?\d+(?:\.\d+)?)/;
@@ -44,4 +48,4 @@ keypadGrid.addEventListener("click", function(event){
         //order of operations
         tempDisplayTest = add(divide(multiply(tempDisplayTest)));
         displayText.textContent = tempDisplayTest;
-    }})
+    }});
