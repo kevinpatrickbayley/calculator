@@ -56,12 +56,20 @@ p{
     color: #cfe0c6;              
     font-family: LCD;
     font-weight: 600;
-    font-size: 48px;
     letter-spacing: 2px;
     text-align: right;
     min-height: 56px;
     width: 75%;
     display: flex; align-items: center; justify-content: flex-end;
+    container-type: inline-size;
+}
+
+#display-text{
+  font-size: clamp(48px, 6cqi, 28px);    /* scales with container width */
+  line-height: 1.2;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance; 
 }
 
 #keypad-grid{
