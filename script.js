@@ -55,7 +55,13 @@ keypadGrid.addEventListener("click", function(event){
             alert("Sorry! You must upgrade to the premium calculator to play with really big numbers!");
             tempDisplay = "";
         }
-        //order of operations
-        tempDisplay = subtract(add(divide(multiply(tempDisplay))));
-        displayText.textContent = tempDisplay;
+        //stopping incomplete operations
+        if(/(?:^|[^0-9])([/*+]|-(?!\d))|([/*+]|-(?!\d))(?!\d)/.test(tempDisplay)){
+            alert("Sorry! Please complete your function! (There's a stray operator somewhere)");
+        }else{
+            //order of operations
+            tempDisplay = subtract(add(divide(multiply(tempDisplay))));
+            displayText.textContent = tempDisplay;
+        }
+        
     }});
