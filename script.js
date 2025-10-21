@@ -50,6 +50,11 @@ keypadGrid.addEventListener("click", function(event){
             alert("Sorry! You must upgrade to the premium calculator to divide by 0!");
             tempDisplay = "";
         } 
+        //stopping  operations with exponents
+        if(/[A-Za-z]/.test(tempDisplay)){
+            alert("Sorry! You must upgrade to the premium calculator to play with really big numbers!");
+            tempDisplay = "";
+        }
         //order of operations
         tempDisplay = subtract(add(divide(multiply(tempDisplay))));
         displayText.textContent = tempDisplay;
