@@ -1,10 +1,10 @@
-let add = s => {
+const add = s => {
     const rx = /(-?(?:\d*\.\d+|\d+))\+(-?(?:\d*\.\d+|\d+))/;
     while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) + parseFloat(b)));
     return s;
 };
 
-let subtract = s => {
+const subtract = s => {
     const rx = /(-?(?:\d*\.\d+|\d+))\-(-?(?:\d*\.\d+|\d+))/;
     while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) - parseFloat(b)));
     return s;
@@ -16,7 +16,7 @@ const multiply = s => {
     return s;
 };
 
-let divide = s => {
+const divide = s => {
     const rx = /(-?(?:\d*\.\d+|\d+))\/(-?(?:\d*\.\d+|\d+))/;
     while (rx.test(s)) s = s.replace(rx, (_, a, b) => String(parseFloat(a) / parseFloat(b)));
     return s;
