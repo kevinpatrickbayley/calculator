@@ -22,7 +22,7 @@ let divide = s => {
     return s;
 };
 
-let tempDisplayTest = "";
+let tempDisplay = "";
 const displayText = document.getElementById("display-text");
 
 const keypadGrid = document.getElementById("keypad-grid");
@@ -30,22 +30,27 @@ const keypadGrid = document.getElementById("keypad-grid");
 keypadGrid.addEventListener("click", function(event){
     //numbers and operators
     if (event.target && event.target.classList.contains("key-print")){
-        tempDisplayTest += event.target.textContent;
-        displayText.textContent = tempDisplayTest;
+        tempDisplay += event.target.textContent;
+        displayText.textContent = tempDisplay;
     }
     //clear key
     if (event.target && event.target.classList.contains("key-clear")){
-        tempDisplayTest = "";
-        displayText.textContent = tempDisplayTest;
+        tempDisplay = "";
+        displayText.textContent = tempDisplay;
     }
     //backspace key
     if (event.target && event.target.classList.contains("key-back")){
-        tempDisplayTest = tempDisplayTest.slice(0,-1);
-        displayText.textContent = tempDisplayTest;
+        tempDisplay = tempDisplay.slice(0,-1);
+        displayText.textContent = tempDisplay;
     }
     //equal key
     if (event.target && event.target.classList.contains("key-equal")){
+        //stopping div by 0
+        if(/\/0(?![0-9.])/.test(tempDisplay)){
+            alert("Sorry! You must upgrade to the premium calculator to divide by 0!");
+            tempDisplay = "";
+        } 
         //order of operations
-        tempDisplayTest = subtract(add(divide(multiply(tempDisplayTest))));
-        displayText.textContent = tempDisplayTest;
+        tempDisplay = subtract(add(divide(multiply(tempDisplay))));
+        displayText.textContent = tempDisplay;
     }});
